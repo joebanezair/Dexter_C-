@@ -1,0 +1,27 @@
+using System;
+
+namespace ConsoleApp1
+{
+   
+    class Program
+    {
+        static void Main(string[] args){
+          //calling methods from another class
+          _other.math_Class();
+        }   
+    }
+
+    class _other
+    {
+        public static void math_Class()
+        {
+            Console.WriteLine("Enter a number and we will use 5 math class\nto play with the numbers:");
+            int _read = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(Math.Min(_read,1));
+            Console.WriteLine(Math.Sqrt(_read));
+            Console.WriteLine(Math.Max(_read,.10));
+            Console.WriteLine(Math.Abs(-10+_read));
+            Console.WriteLine(Math.Round(_read+.33));
+        }
+    }
+}
