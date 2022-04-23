@@ -1,0 +1,69 @@
+using System;
+using System.Collections;
+using System.Text;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp2_Guess
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void submit_Click(object sender, EventArgs e)
+        {
+            ArrayList arr_words_01 = new ArrayList();
+            arr_words_01.Add("talking");
+            arr_words_01.Add("joking");
+            arr_words_01.Add("eating");
+
+            ArrayList arr_words_02 = new ArrayList();
+            arr_words_02.Add("style");
+            arr_words_02.Add("hobby");
+            arr_words_02.Add("niche");
+
+            string _word = word.Text;
+            string _word_02 = word_2.Text;
+
+            //ket walang gaanong use yung string builder, Instructions lang kase love namin yung Programming yiiee!!!
+            StringBuilder sb = new StringBuilder();
+
+            //if both statements are right!
+            if (arr_words_01.Contains(_word) && arr_words_02.Contains(_word_02)){
+                word1.Text = _word; word2.Text = _word_02;
+                MessageBox.Show("String builder\n" + 
+                    sb.Append("You got it right!!\nGood Job!!\n" + 
+                    "YES : " + _word + " is my " + _word_02 + " !"));}
+
+            //if both statements are incorrect
+            else if (!arr_words_01.Contains(_word) && !arr_words_02.Contains(_word_02)){
+                word1.Text = "_ _ _ _ _ _"; word2.Text = "_ _ _ _ _";
+                MessageBox.Show("String builder\n" +
+                    sb.Append("Sorry try again:\n" + "No : '" + 
+                    _word + "' and '" + _word_02 + "' is not on the list"));}
+            
+            //if the second statement is incorrect
+            else if (arr_words_01.Contains(_word) && !arr_words_02.Contains(_word_02)){
+                word1.Text = _word; word2.Text = "_ _ _ _ _";
+                MessageBox.Show("String builder\n" + 
+                    sb.Append("You've only got the first word:\n" + "Yes : '" + 
+                    _word + "' is correct but we don't have '" + _word_02 + "' "));}
+
+            // if the first statement is incorrect
+            else if (!arr_words_01.Contains(_word) && arr_words_02.Contains(_word_02)){
+                word1.Text = "_ _ _ _ _ _"; word2.Text = _word_02;
+                MessageBox.Show("String builder\n" + 
+                    sb.Append("You've only got the second word:\n" + "No : '" + 
+                    _word + "' is incorrect but we have '" + _word_02 + "' "));}
+
+        }
+    }
+}
