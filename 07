@@ -1,0 +1,43 @@
+use DB_CompanyX;
+
+create table Artist(
+AlbumID int primary key not null,
+Album varchar(50)
+);
+insert into Artist values(1,'AMV');
+insert into Artist values(2,'Celine Dion');
+insert into Artist values(3,'Rocks Star');
+insert into Artist values(4,'Bon Jovi');
+insert into Artist values(5, 'White Lion');
+
+SELECT DISTINCT * from Artist order by Album DESC;
+
+SELECT  * from Artist order by Album;
+
+drop table Artist;
+
+
+create table Regions(
+Regions int primary key not null,
+Provinces varchar(50) not null,
+Municipality varchar(50)
+);
+
+insert into Regions values(9,'Rizal','Cainta');
+insert into Regions values(8,'Rizal','Cainta');
+insert into Regions values(7,'Rizal','Cainta');
+insert into Regions values(6,'Rizal','Cainta');
+insert into Regions values(5,'Mabini','Apolinario');
+insert into Regions values(4,'Mabini','Valenzuela');
+insert into Regions values(3,'Mabini','Ukraine');
+insert into Regions values(2,'Mabini','Binondo');
+insert into Regions values(1,'San Andress','Apple');
+
+
+select * from Regions order by Provinces DESC;
+
+select * from Regions where Provinces = 'Rizal';
+drop table regions;
+select * from Regions; 
+ 
+ 
