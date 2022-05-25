@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Dex
+{
+   
+    public partial class StudentNamespace : Form
+    {
+        private void Form1_Load(object sender, EventArgs e) { }
+        public StudentNamespace(){ InitializeComponent(); }
+        private void submit_Click(object sender, EventArgs e)
+        {
+            StudentInfo st = new StudentInfo();
+
+            string student_ID = student_id.Text;
+            string student_Name = student_name.Text;
+            string student_Last = student_lname.Text;
+
+            st.setName(student_Name);
+            st.setID(student_ID);
+            st.setLast_Name(student_Last);
+ 
+
+            if (student_id.Text != "" || student_name.Text != "" || student_lname.Text != "") {
+                stu_id.Items.Add(st.getID());
+                stu_name.Items.Add(st.getName());
+                stu_lname.Items.Add(st.getLast_Name());
+
+                this.student_id.Focus(); this.student_id.Clear();
+                this.student_lname.Focus(); this.student_lname.Clear();
+                this.student_name.Focus(); this.student_name.Clear();
+            }
+        }
+    }
+    class StudentInfo {
+
+        string name;
+        string id;
+        string last_name;
+
+        public string getName() { return name; }
+        public void setName(string name) { this.name = name; }
+        public string getID() { return id; }
+        public void setID(string id){ this.id = id; }
+        public string getLast_Name() { return last_name; }
+        public void setLast_Name(string last_name) { this.last_name = last_name; }
+    }
+}
