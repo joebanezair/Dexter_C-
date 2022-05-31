@@ -1,0 +1,21 @@
+use hiring_resource;
+
+create table userData(
+usercode varchar(300) primary key not null,
+
+user_email varchar(50) not null,
+user_age int not null,
+user_gender varchar(20) not null,
+
+user_name varchar(50) not null, 
+user_lastname varchar(50) not null,
+user_password varchar(500) not null,
+
+user_address varchar(700) not null,
+user_industry varchar(500) not null,
+user_jobCategories varchar(500) not null
+);
+
+select * from userData;
+
+@usercode, @user_email, @user_gender, @user_name, @user_lastname, @user_password, @user_address, @user_industry, @user_jobCategories
