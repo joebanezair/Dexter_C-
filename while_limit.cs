@@ -42,3 +42,81 @@ namespace loop
         }
     }
 }
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace UserNamespace
+{
+   
+
+    public class User  
+    {
+        private string user_id;
+        protected string user_passaword;
+
+        static void Main(string[] args)
+        {
+            User use;
+            string pass = "4321", id = "1234";
+            User.Equals(pass, id);
+            Console.WriteLine();
+        }
+
+        public User(string id, string pass) {
+            this.user_id = id;
+            this.user_passaword = pass;
+        }
+        public void verifyLogin (string id, string pass) {
+           this.user_id = id = "1234";
+           this.user_passaword = pass = "4321";
+
+           bool compare = string.Equals(id, "1234");  
+           bool compare2 = string.Equals(pass, "4321");
+           Console.WriteLine(compare);
+           Console.WriteLine(compare2);
+        }
+        public void updatePassword
+        (string newPassword) {
+           this.user_passaword = newPassword;
+        }
+        
+    }
+
+    public class Administrator : User 
+    {
+        private string admin_name;
+        public string pass, id;
+        public Administrator
+        (string name, string id, string pass) : base(pass, id)  
+        {
+            this.admin_name = name = "Joebanezair";
+            this.id = id; 
+            this.pass = pass;
+        }
+        public void updatePassword
+        (string newPassword)
+        {
+            this.user_passaword = newPassword;
+        }
+        public void updateAdminName(string name)
+        {
+            this.admin_name = name;
+        }
+
+    }
+}
+
+     
+    
+
+
+ 
+
