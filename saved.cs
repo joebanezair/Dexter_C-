@@ -118,3 +118,54 @@ namespace WindowsFormsApp1
     }
 
 }
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+ 
+        public double computation;
+        private void compute_Click(object sender, EventArgs e)
+        {
+            double price, amount, compute, sdiscount = 1535;
+            price = Convert.ToDouble(itemprice.Text);
+            amount = Convert.ToDouble(quantity.Text);
+            compute = price * amount;
+            double apple = Convert.ToDouble(discount.Text);
+            double percent = (compute * apple) / 100;
+            computation = compute - percent;
+            TOTAL.Text = " TOTAL : " + computation;
+            
+        }
+
+        private void submit_Click(object sender, EventArgs e)
+        {
+
+            double compute = this.computation;
+            double pay = Convert.ToDouble(payment.Text);
+
+            double payed = pay - compute;
+            CHANGE.Text = "CHANGE : " + payed;
+
+        }
+
+
+    }
+
+     
+
+}
